@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Рождения, Бахарой Эжеке!</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/9281/9281502.png">
+
+<!-- Музыка: положи файл music.mp3 в ту же папку! -->
+<audio id="bg-music" src="Indila - Love Story.mp3" loop preload="auto"></audio>
+</head>
+<body>
+
+<!-- SPLASH — нажми чтобы начать -->
+<div id="splash" onclick="startSite()">
+  <div class="splash-crown">👑</div>
+  <div class="splash-text">
+    С Днём Рождения,<br>
+    <span style="color:var(--gold);font-style:italic;">Бахарой Эжеке!</span>
+  </div>
+  <div class="splash-line"></div>
+  <div class="splash-sub">✦ Нажми чтобы открыть ✦</div>
+</div>
+
+<canvas id="confetti"></canvas>
+<div class="starfield" id="starfield"></div>
+
+<!-- MUSIC PLAYER -->
+<div id="music-player">
+  <div class="music-pill">
+    <button class="play-btn" id="play-btn" onclick="toggleMusic()">▶</button>
+    <div class="music-info">
+      <div class="music-name">Love Story</div>
+      <div class="music-artist">Taylor Swift</div>
+    </div>
+    <div class="bars">
+      <div class="bar" style="height:6px;--s:0.55s"></div>
+      <div class="bar" style="height:11px;--s:0.80s"></div>
+      <div class="bar" style="height:14px;--s:0.50s"></div>
+      <div class="bar" style="height:9px;--s:0.95s"></div>
+      <div class="bar" style="height:13px;--s:0.70s"></div>
+      <div class="bar" style="height:7px;--s:1.05s"></div>
+      <div class="bar" style="height:11px;--s:0.65s"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+  <p class="label">С Днём Рождения</p>
+  <div class="crown-wrap">👑</div>
+  <h1 class="hero-name">Бахарой Эжеке</h1>
+  <p class="hero-title">Дорогой учительнице — с любовью и уважением</p>
+  <div class="ornament">
+    <div class="ornament-line"></div><div class="ornament-diamond"></div>
+    <div class="ornament-diamond" style="margin:0 -6px;opacity:0.5;width:5px;height:5px;"></div>
+    <div class="ornament-diamond"></div><div class="ornament-line"></div>
+  </div>
+  <p class="hero-date">30 Марта 2026</p>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Прокрутить</span></div>
+</div>
+
+<!-- POEM -->
+<section>
+  <p class="section-label reveal">Стихотворение</p>
+  <h2 class="section-title reveal">От всей души ✨</h2>
+  <div class="divider reveal"><div class="divider-gem"></div></div>
+  <div class="poem-wrap reveal">
+    <div class="poem-stanza">Вы — наш маяк в огромном море знаний,<br>Вы учите нас верить и мечтать.<br>В ваш праздник пусть сбываются желания,<br>И счастье не устанет вас встречать!</div>
+    <div class="poem-stanza">Пусть в жизни будет радость без предела,<br>Улыбок — полон каждый новый день,<br><strong>Здоровья крепкого, любви умелой</strong>,<br>И пусть не знает сердце слово «тень»!</div>
+    <div class="poem-stanza">Спасибо Вам за мудрость и терпение,<br>За каждый урок, за каждый добрый взгляд.<br>Мы говорим с теплом и вдохновением:<br><strong>Бахарой Эжеке — мы Вас любим стократ!</strong> 🌟</div>
+  </div>
+</section>
+
+<!-- WISHES -->
+<section>
+  <p class="section-label reveal">Наши пожелания</p>
+  <h2 class="section-title reveal">Пусть в Вашей жизни будет…</h2>
+  <div class="divider reveal"><div class="divider-gem"></div></div>
+  <div class="wishes-grid reveal">
+    <div class="wish-card"><span class="wish-icon">💛</span><div class="wish-text">Тепло и любовь близких каждый день</div></div>
+    <div class="wish-card"><span class="wish-icon">🌹</span><div class="wish-text">Цветы и улыбки без повода</div></div>
+    <div class="wish-card"><span class="wish-icon">✨</span><div class="wish-text">Яркие звёзды на Вашем пути</div></div>
+    <div class="wish-card"><span class="wish-icon">🍀</span><div class="wish-text">Удача во всех начинаниях</div></div>
+    <div class="wish-card"><span class="wish-icon">🎁</span><div class="wish-text">Приятные сюрпризы каждый день</div></div>
+    <div class="wish-card"><span class="wish-icon">🕊️</span><div class="wish-text">Покой и гармония в душе</div></div>
+  </div>
+</section>
+
+<!-- PHOTO -->
+<section>
+  <p class="section-label reveal">Воспоминания</p>
+  <h2 class="section-title reveal">Фотография</h2>
+  <div class="divider reveal"><div class="divider-gem"></div></div>
+  <div class="photo-frame reveal">
+    <img src="we.jpg" alt="Хороший момент">
+    <div class="photo-placeholder">
+    </div>
+    <div class="photo-shimmer"></div>
+  </div>
+  <p class="photo-caption reveal">— Бахарой Эжеке —</p>
+</section>
+
+<footer>✦ &nbsp; Создано с любовью вашими учениками &nbsp; ✦</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
